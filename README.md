@@ -1,9 +1,37 @@
 # taffydb-appcelerator
 TaffyDB for AppCelerator Mobile Applications
 
-# use
+# Use
 
-# license
+1. Download or clone this project, then put taffy.js file in your Appcelerator project, by example the folder "/lib" .
+
+2. Create a file for handle basic operations with TaffyDb File.
+
+3. Inside of file:
+
+function TaffyHandler() {
+
+  var TAFFY = require( '/lib/taffy.js' ).taffy;
+
+	this.createDbFile = function(dbName, jsonData) {
+		var _fileName = dbName + 'json';
+		var _jsonDb = TAFFY(jsonData);
+		_jsonDb.saveDBFile(_fileName);
+	};
+  
+	this.openDbFile = function(dbName) {
+		var _fileName = dbName + 'json';
+		return TAFFY(TAFFY.loadDBFile(_fileName));
+	};
+  
+};
+module.exports = TaffyHandler; 
+
+And that it´s, you have a Json Database ready for your AppCelerator Application.
+
+Enjoy it!.
+
+# License
 License under the terms of the MIT License
 
 The MIT License (MIT)
