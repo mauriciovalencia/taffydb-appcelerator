@@ -1,6 +1,7 @@
 # taffydb-appcelerator
 TaffyDB for AppCelerator Mobile Applications
 
+
 # Use
 
 1. Download or clone this project, then put taffy.js file in your Appcelerator project, by example the folder "/lib" .
@@ -9,23 +10,22 @@ TaffyDB for AppCelerator Mobile Applications
 
 3. Inside of file:
 
-function TaffyHandler() {
+	function TaffyHandler() {
 
-  var TAFFY = require( '/lib/taffy.js' ).taffy;
+	    var TAFFY = require( '/lib/taffy.js' ).taffy;
 
-	this.createDbFile = function(dbName, jsonData) {
+	    this.createDbFile = function(dbName, jsonData) {
 		var _fileName = dbName + 'json';
 		var _jsonDb = TAFFY(jsonData);
 		_jsonDb.saveDBFile(_fileName);
-	};
-  
-	this.openDbFile = function(dbName) {
+	    };
+
+	    this.openDbFile = function(dbName) {
 		var _fileName = dbName + 'json';
 		return TAFFY(TAFFY.loadDBFile(_fileName));
+	    };
 	};
-  
-};
-module.exports = TaffyHandler; 
+	module.exports = TaffyHandler;
 
 And that it´s, you have a Json Database ready for your AppCelerator Application.
 
