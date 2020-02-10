@@ -12,16 +12,16 @@ TaffyDB for AppCelerator Mobile Applications
 
 	function TaffyHandler() {
 
-	    var TAFFY = require( '/lib/taffy.js' ).taffy;
+	    const TAFFY = require( '/lib/taffy.js' ).taffy;
 
 	    this.createDbFile = function(dbName, jsonData) {
-		var _fileName = dbName + 'json';
-		var _jsonDb = TAFFY(jsonData);
+		const _fileName = `{dbName} json`;
+		const _jsonDb = TAFFY(jsonData);
 		_jsonDb.saveDBFile(_fileName);
 	    };
 
 	    this.openDbFile = function(dbName) {
-		var _fileName = dbName + 'json';
+		const _fileName = `{dbName} json`;
 		return TAFFY(TAFFY.loadDBFile(_fileName));
 	    };
 	};
@@ -35,7 +35,7 @@ Enjoy it!.
 License under the terms of the MIT License
 
 The MIT License (MIT)
-Copyright © 2018 Mauricio Valencia
+Copyright © 2020 Mauricio Valencia
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
