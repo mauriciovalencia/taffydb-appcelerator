@@ -15,13 +15,13 @@ TaffyDB for AppCelerator Mobile Applications
 	    const TAFFY = require( '/lib/taffy.js' ).taffy;
 
 	    this.createDbFile = function(dbName, jsonData) {
-		const _fileName = `{dbName} json`;
+		const _fileName = `${dbName} json`;
 		const _jsonDb = TAFFY(jsonData);
 		_jsonDb.saveDBFile(_fileName);
 	    };
 
 	    this.openDbFile = function(dbName) {
-		const _fileName = `{dbName} json`;
+		const _fileName = `${dbName} json`;
 		return TAFFY(TAFFY.loadDBFile(_fileName));
 	    };
 	};
